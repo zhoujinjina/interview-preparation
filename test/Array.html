@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BFC Example</title>
+  <style>
+    .container {
+      border: 1px solid red;
+      overflow: hidden; /* 创建BFC */
+    }
+    .float {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      margin-right: 10px;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      color: white;
+    }
+  </style>            
+</head>
+<body>
+  <div class="container">
+    <div class="float"></div>
+    <div class="box">Box</div>
+  </div>
+</body>
+</html>
