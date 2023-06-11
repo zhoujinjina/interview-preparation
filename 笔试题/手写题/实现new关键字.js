@@ -1,4 +1,4 @@
-//实现new关键字
+  //实现new关键字
 const MyNew = (constructor, ...args) => {
   // 创建一个空对象，并将该对象的原型__proto__指向构造函数的原型prototype
   const obj = Object.create(constructor.prototype);

@@ -4,32 +4,30 @@
   <meta charset="UTF-8">
   <title>BFC Example</title>
   <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
     .container {
-      border: 1px solid red;
-      overflow: hidden; /* 创建BFC */
+    height: 100vh;
+    width: 100wh;
+    display:grid;
+    grid-template-columns: 50% 100px 50%;
+    
     }
     .float {
-      float: left;
+
       width: 100px;
       height: 100px;
       background-color: yellow;
-      margin-right: 10px;
+      grid-column: 2;
     }
-    .box {
-      width: 200px;
-      height: 200px;
-      background-color: blue;
-      color: white;
-    }
+  
   </style>            
 </head>
 <body>
   <div class="container">
     <div class="float"></div>
-    <div class="box">Box</div>
-    <input type="date">
-    <progress>wo</progress>
-    <strong>啥东西</strong>
   </div>
 </body>
 </html>
