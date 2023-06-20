@@ -4,36 +4,29 @@
     <meta charset="UTF-8" />
     <title>BFC Example</title>
     <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      .container {
-        height: 100vh;
-        width: 100vw;
-        display: flex;
       
-      }
-      .float {
-        width: 100px;
-        height: 100px;
-        background-color: yellow;
-     
-      }
-      .a {
-        width: 100px;
-        height: 100px;
-        background-color: rgb(144, 0, 255);
-     flex-grow: 1;
-     
-      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="float"></div>
-      <div class="a"></div>
-      <div class="float"></div>
-    </div>
+    <script>
+      var dragElement = document.getElementById('drag-element');
+var dropZone = document.getElementById('drop-zone');
+
+dragElement.addEventListener('dragstart', function(event) {
+  event.dataTransfer.setData('text/plain', '拖动的数据');
+});
+
+dropZone.addEventListener('dragover', function(event) {
+  event.preventDefault();
+});
+
+dropZone.addEventListener('drop', function(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData('text/plain');
+  console.log('拖动的数据：' + data);
+});
+    </script>
+    <div id="drag-element" draggable="true">拖动我</div>
+    <div id="drop-zone">将元素拖到这里</div>
   </body>
 </html>

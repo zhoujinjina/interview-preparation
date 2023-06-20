@@ -159,7 +159,12 @@ Websocket的工作原理是：客户端和服务器首先通过HTTP协议建立�
 
 19.git 解决冲突和回退版本
 
-20.对象转树结构
-
-21Websocket是一种基于TCP协议的全双工通信协议，它允许在客户端和服务器之间建立一个持久性的连接，可以进行双向实时通信
-Websocket的工作原理是：客户端和服务器首先通过HTTP协议建立连接，然后升级到Websocket协议，建立一个双向通信的持久连接。一旦连接建立成功，客户端和服务器就可以进行双向通信，可以发送和接收文本或二进制消息
+20.css3新特性 
+border-radius 圆角边框
+box-shadow  盒子阴影
+tex-shadow 文字阴影
+Gradient 渐变背景  background: linear-gradient(to bottom, #ff0000, #00ff00)
+transition过渡效果
+animations 动画效果
+flex 弹性盒子布局
+grid网格布局
