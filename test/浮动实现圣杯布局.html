@@ -6,35 +6,34 @@
     <title>Document</title>
   </head>
   <style>
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.left {
-  background-color: black;
-  width: 200px;
-  float: left;
-}
-
-.right {
-  background-color: red;
-  width: 200px;
-  float: right;
-}
-
-.content {
-  background-color: #bfa;
- 
-}
+    .root {
+      height: 100vh;
+      width: 100vw;
+    }
+    .right {
+      width: 100px;
+      height: 100%;
+      float: left;
+      background-color: black;
+    }
+    .left {
+      height: 100%;
+      width: 100px;
+      float: right;
+      background-color: red;
+    }
+    .center {
+      float: left;
+      width: calc(100% - 200px); /* 减去左右两个元素的宽度 */
+      height: 100%;
+      background-color: #bfa;
+    }
   </style>
   <body>
-    <div class="wrapper">
-      <div class="left">左侧固定宽度</div>
-      <div class="right">右侧固定宽度</div>
-      <div class="content">中间自适应宽度</div>
+    <div class="root">
+      <div class="right"></div>
+      <div class="center"></div>
+      <div class="left"></div>
     </div>
   </body>
 </html>
