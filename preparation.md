@@ -168,3 +168,9 @@ transition过渡效果
 animations 动画效果
 flex 弹性盒子布局
 grid网格布局
+
+21.localStorage和sessionStorage的区别
+1.localStorage中的数据没有过期时间，除非通过代码或者手动清除，否则会一直保存在客户端，
+sessionStorage中的数据会在当前会话窗口关闭时自动清除
+localStorage的数据可以在同源的所有窗口共享 而sessionStorage中的数据只在同一个窗口中有效，不同窗口之间的数据不共享
+localStorage和sessionStorage中存储的数据大小限制在不同的浏览器中有所不同，但通常都在5MB左右
