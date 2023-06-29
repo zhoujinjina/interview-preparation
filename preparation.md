@@ -192,3 +192,6 @@ Host 头部：HTTP1.1 引入了 Host 头部，可以在一个 IP 地址上承载
 缓存控制：HTTP1.1 引入了更多的缓存控制机制，如 Cache-Control 和 ETag 等，可以更加精细地控制缓存策略，提高了缓存的效率和命中率。而 HTTP1.0 只能使用简单的 Expires 头部来控制缓存。
 
 请求方法：HTTP1.1 引入了 OPTIONS 和 DELETE 等新的请求方法，使得开发者可以更加灵活地处理请求。而 HTTP1.0 只支持 GET、POST 和 HEAD 三种请求方法。
+
+24.react怎么更新dom
+首先会吧状态改变的组件标记为脏组件，然后会将其添加到待更新队列中，ref放在userffect依赖数组中会怎么
