@@ -1,39 +1,13 @@
-`transition-duration` 属性用于指定 CSS 过渡效果的持续时间。它可以取以下值：
+在Git中，当两个分支上的修改冲突时，您需要解决这些冲突。以下是解决Git合并冲突的一般步骤：
 
-- `time`：指定以秒或毫秒为单位的过渡时间，例如 `1s` 或 `500ms`。如果未指定时间单位，则默认为秒。
+1. 确认冲突：使用`git status`命令查看哪些文件具有冲突。冲突的文件会被标记为“Unmerged”。
 
-- `0`：指定无过渡效果，即元素属性立即从一个值变为另一个值。
+2. 手动解决冲突：打开冲突文件，并查找标识为`<<<<<<< HEAD`，`=======`和`>>>>>>>`的Git标记。它们分别表示当前分支的修改、合并的基础版本和另一个分支的修改。您需要手动编辑文件，将两个分支的修改合并在一起。
 
-`transition-duration` 属性是 `transition` 属性的一部分，用于指定 CSS 过渡效果的持续时间。其他与 `transition` 属性相关的属性包括：
+3. 添加解决冲突的文件：编辑冲突文件后，将其标记为已解决冲突并准备提交。使用`git add`命令将文件标记为已解决冲突，例如`git add <冲突文件>`。
 
-- `transition-property`：用于指定应该过渡的 CSS 属性的名称。
+4. 提交合并：使用`git commit`命令提交合并的更改。在提交消息中，您可以输入有关已解决冲突的信息。
 
-- `transition-timing-function`：用于指定过渡效果的时间曲线函数。
+5. 完成合并：使用`git merge`命令完成合并操作，例如`git merge <合并的分支>`。如果没有其他冲突，则合并将成功完成。
 
-- `transition-delay`：用于指定过渡效果的延迟时间。
-
-下面是一个示例代码，演示如何使用 `transition-duration` 属性实现一个平滑的背景颜色过渡效果：
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      .box {
-        background-color: #f00;
-        transition-property: background-color;
-        transition-duration: 1s;
-      }
-
-      .box:hover {
-        background-color: #0f0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="box">Hover over me</div>
-  </body>
-</html>
-```
-
-在上面的示例中，当鼠标悬停在 `.box` 元素上时，背景颜色将从红色平滑地过渡到绿色，持续时间为 1 秒。
+如果您在解决冲突时遇到困难或错误，请使用`git status`命令查看状态，并查看有关如何解决特定冲突的Git文档和资料。
