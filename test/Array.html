@@ -14,19 +14,24 @@
       .b {
         background-color: red;
         width: 100px;
-        height: 0px;
-        top: 20px;
-        transition: height ease 0.6s;
-      }
-      .c:hover .b {
         height: 100px;
+        transform: translateY(0);
+        animation: md 0.3s ease-in-out infinite;
+      }
+
+      @keyframes md {
+      
+        to {
+          transform:  translate(-80%);
+        }
+
+        
       }
     </style>
   </head>
   <body>
     <div class="a">
       <div class="c">
-        <span><a href="javascript:;">点我</a></span>
         <div class="b">fd</div>
       </div>
     </div>
