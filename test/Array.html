@@ -6,34 +6,28 @@
     <style>
       .a {
         display: flex;
-        width: 100%;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-      }
-      .b {
-        background-color: red;
         width: 100px;
-        height: 100px;
-        transform: translateY(0);
-        animation: md 0.3s ease-in-out infinite;
-      }
+        height: 20px;
+       background-color: red;
+       border-radius: 12px;
+       position: absolute;
+       left: 0;
+       animation: name cubic-bezier(0.88,-.35,.565,1.35) infinite 0.4s;
+}
 
-      @keyframes md {
+
       
-        to {
-          transform:  translate(-80%);
-        }
-
-        
+    @keyframes name{
+      to{
+        left: 100px;
       }
+    }
+      
     </style>
   </head>
   <body>
     <div class="a">
-      <div class="c">
-        <div class="b">fd</div>
-      </div>
+      
     </div>
   </body>
 </html>
