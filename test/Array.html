@@ -4,35 +4,71 @@
     <meta charset="UTF-8" />
     <title>BFC Example</title>
     <style>
-      .a {
+      .items {
         display: flex;
-        width: 100px;
-        height: 20px;
-       background-color: red;
-       border-radius: 12px;
-       position: absolute;
-       top:4px;
-       left: 0;
-       animation: name ease infinite 1s;
-}
-
-
-      
-    @keyframes name{
-      from{
-        
+    
+    
+       
+        gap: 10px;
       }
-      to{
-        rotate: 360deg;
+      .item {
+        height: 200px;
+        width: 200px;
       }
-    }
-      
+      img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+      }
     </style>
   </head>
   <body>
+    <script>
+    const items = document.querySelector('.items');
+    const toleft=()=>{
+      console.log("ij")
+      items.style.transform = 'translateX(-100px)';
+    }
+    </script>
     <span>day</span>
-    <div class="a">
-      
+    <button onclick="toleft()">left</button>
+    <button onclick="">right</button>
+    <div class="items">
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
+      <div class="item"><img src="/beauty.png" alt="a" srcset="" /></div>
     </div>
   </body>
 </html>
