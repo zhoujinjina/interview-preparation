@@ -105,20 +105,3 @@ class Event {
   }
 const event = new Event();
 
-const foo = () => console.log('foo');
-const bar = () => console.log('bar');
-const baz = () => console.log('baz');
-
-event.addEventListener('test', foo);
-event.addEventListener('test', bar);
-event.addEventListener('test', baz);
-
-event.emit('test'); // 'foo', 'bar', 'baz'
-
-event.removeEventListener('test', bar);
-
-event.emit('test'); // 'foo', 'baz'
-
-event.removeAll('test');
-
-event.emit('test'); // No output
