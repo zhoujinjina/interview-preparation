@@ -171,6 +171,11 @@ Websocket的工作原理是：客户端和服务器首先通过HTTP协议建立�
 5. 完成合并：使用`git merge`命令完成合并操作，例如`git merge <合并的分支>`。如果没有其他冲突，则合并将成功完成。
 
 如果您在解决冲突时遇到困难或错误，请使用`git status`命令查看状态，并查看有关如何解决特定冲突的Git文档和资料。
+
+git merge 和git rebase的区别
+git merge是将一个分支的更改合并到另一个分支上，创建一个新的合并提交，保留两个分支的历史记录。
+git rebase是将一个分支的更改应用到另一个分支上，使得提交历史变得更加线性，但可能会导致冲突和合并麻烦。
+
 20.css3新特性 
 border-radius 圆角边框
 box-shadow  盒子阴影
@@ -207,7 +212,7 @@ Host 头部：HTTP1.1 引入了 Host 头部，可以在一个 IP 地址上承载
 请求方法：HTTP1.1 引入了 OPTIONS 和 DELETE 等新的请求方法，使得开发者可以更加灵活地处理请求。而 HTTP1.0 只支持 GET、POST 和 HEAD 三种请求方法。
 
 24.react怎么更新dom
-在setstate之后 react会把新的状态合并到状态对象中，然后将组件标记为“脏组件”，将其添加到待更新队列中，react会调用render方法生成新的虚拟DOM，然后diff算法对比新旧虚拟DOM树，找出需要更新的部分，最后将更新操作应用到真实DOM中
+在setState之后 react会把新的状态合并到状态对象中，然后将组件标记为“脏组件”，将其添加到待更新队列中，react会调用render方法生成新的虚拟DOM，然后diff算法对比新旧虚拟DOM树，找出需要更新的部分，最后将更新操作应用到真实DOM中
 
 25.apply call bind的区别
 call可以指定一个对象为函数this
