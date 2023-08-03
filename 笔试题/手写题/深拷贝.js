@@ -17,23 +17,21 @@ let clone = deepClone(person);
 clone.name = "jbs";
 console.log(clone);
 console.log(person);
-// function deepClone(obj){
-//   if(obj===null||typeof obj!=='object'){
-//       return obj
-//   }
-//   const clone=Array.isArray(obj)?[]:{}
-//   let keys=Object.keys(obj)//返回的是属性的数组 所以下面的循环用of
-//   for(let key of keys){
-//       clone[key]=obj[key]
-//   }
-//   return clone
 
-// }
-// let person={
-//   name: 'John',
-//   age: 36,
-// }
-// let clone=deepClone(person)
-// person.age=12
-// console.log(person)
-// console.log(clone)
+
+const deepC=(obj)=>{
+if(obj==null||typeof obj!="object")return obj
+  let cloneObj=Array.isArray(obj)?[] : {};
+  for(let i in obj) {
+    cloneObj[i] = deepClone(obj[i]);
+  }
+
+  return cloneObj;
+
+}
+
+let arr=[1,2,3,4,44,[3,4,4,5]]
+let newArr=deepC(arr)
+console.log(newArr)
+arr=[1,2]
+console.log(newArr)
