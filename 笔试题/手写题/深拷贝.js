@@ -34,4 +34,3 @@ let arr=[1,2,3,4,44,[3,4,4,5]]
 let newArr=deepC(arr)
 console.log(newArr)
 arr=[1,2]
-console.log(newArr)
