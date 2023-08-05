@@ -12,5 +12,4 @@ function maxSum(arr) {
   }
   return sum;
 }
-
-console.log(maxSum([-1, 8, 4, -9, 0, 2, 1, 4, -2]));
+// 最大和
