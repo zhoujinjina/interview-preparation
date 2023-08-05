@@ -15,3 +15,4 @@ var clearInterval=myInterval(()=>{
 setTimeout(()=>{
     clearInterval()
 },10000)
+console.log()
