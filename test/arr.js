@@ -104,4 +104,8 @@ class Event {
     }
   }
 const event = new Event();
-
+let a=1
+function adds(){
+ console.log(a)
+}
+adds()
