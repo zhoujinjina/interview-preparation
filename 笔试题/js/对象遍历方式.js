@@ -9,7 +9,6 @@ Object.defineProperty(obj, "prop3", {
 });
 
 Object.prototype.prop4 = "value4"; // 原型链上的属性
-
 // for...in 循环
 console.log("for...in:");
 for (let key in obj) {
