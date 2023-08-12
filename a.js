@@ -4,15 +4,17 @@ let b=a.toString().split(",")
 console.log(b)
 let c=[1,2,3,4,5,6]
 try {
-    let d=c.map(item=>{
+    var d=c.map(item=>{
         if(item==4){
-         throw new Error
+            throw new Error
         }
-        console.log('111')
+        return item
      }
      
      )
+     
   
 } catch (error) {
     console.log(error)
 }
+console.log(d)
