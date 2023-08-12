@@ -239,6 +239,9 @@ reverse(): 反转数组中元素的顺序。
 sort(): 按照指定规则对数组中的元素进行排序。
 fill(): 用一个固定值填充数组中从起始索引到终止索引内的全部元素。
 
+数组的遍历方法哪些支持打断
+forEach map reduce filter 不支持打断
+some every for可以打断 some和every分别返回true和false来打断 for循环
 27.useLayoutEffect和useEffect的区别是什么
 useEffect 会在组件渲染完成后异步执行，不会阻塞组件的渲染过程，因此适用于大多数副作用操作。
 而 useLayoutEffect 会在组件渲染完成后同步执行，会阻塞组件的渲染过程，因此只适用于那些需要立即同步更新 DOM 的操作。
@@ -290,3 +293,5 @@ var:函数作用域 可重复声明 可重新赋值 （函数内有效
 
 36.css选择器优先级
 !important>行内样式>ID选择器>类、伪类、属性>元素、伪元素>关系选择器、通配符
+
+37.数组遍历方法支持
