@@ -22,3 +22,9 @@ function test(name,age){
 
 }
 // bind apply call 都是构造函数调用 然后调用的时候this指向参数
+function Person(name,age){
+    console.log(this.name)
+    console.log(this.age)
+    this.name=name
+    this.age=age
+}
