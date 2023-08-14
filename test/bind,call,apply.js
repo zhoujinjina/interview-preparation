@@ -7,11 +7,11 @@ let c=[1,2,3,4,5,6]
 // bind函数是生成一个新的函数this指向参数
 // call函数是
 function Person(name,age){
+    a=function a(){}
     console.log(this.name)
     console.log(this.age)
     this.name=name
     this.age=age
-    return {}
 }
 let person={name: "John", age:19}
 const newPerson=Person.bind(person)
@@ -20,4 +20,4 @@ let as=Person.call(person,12,13)
 console.log(person)
 console.log(as)
 let aa=new Person("1",1)
-console.log(aa)
+console.log(Person.a())
