@@ -5,19 +5,16 @@ console.log(b)
 let c=[1,2,3,4,5,6]
 // bind apply call 都是构造函数调用 然后调用的时候this指向参数
 // bind函数是生成一个新的函数this指向参数
-// call函数是
+// call和apply函数都是执行一遍构造函数
 function Person(name,age){
-    a=function a(){}
     console.log(this.name)
     console.log(this.age)
     this.name=name
     this.age=age
 }
 let person={name: "John", age:19}
-const newPerson=Person.bind(person)
+ const newPerson=Person.bind(person)
 newPerson()
 let as=Person.call(person,12,13)
 console.log(person)
 console.log(as)
-let aa=new Person("1",1)
-console.log(Person.a())
