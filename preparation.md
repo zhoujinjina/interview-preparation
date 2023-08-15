@@ -186,6 +186,7 @@ git merge是将一个分支的更改合并到另一个分支上，创建一个�
 git rebase是将一个分支的更改应用到另一个分支上，使得提交历史变得更加线性，但可能会导致冲突和合并麻烦。
 git cherry-pick c1 c2将这两次提交复制到当前分支
 git rebase -i HEAD~n 将当前分支之前的n个提交复制到另一个分叉中 并且可以删除其中一个或者几个
+
 20.css3新特性 
 border-radius 圆角边框
 box-shadow  盒子阴影
