@@ -299,3 +299,7 @@ some（true） every（false） for（break）
 
 38.为什么number和string都可以使用toString方法
 当我们调用 toString() 方法时，JavaScript 会暂时将原始数据类型包装成对应的 Number 或 String 对象，然后调用对象上的 toString() 方法。
+
+39.rem和em的区别
+rem相对于根元素的字体大小进行计算
+em相对于父元素的字体大小进行计算
