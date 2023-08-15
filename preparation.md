@@ -294,4 +294,8 @@ var:函数作用域 可重复声明 可重新赋值 （函数内有效
 36.css选择器优先级
 !important>行内样式>ID选择器>类、伪类、属性>元素、伪元素>关系选择器、通配符
 
-37.数组遍历方法支持
+37.数组遍历方法支持提前打断的有哪些 
+some（true） every（false） for（break）
+
+38.为什么number和string都可以使用toString方法
+当我们调用 toString() 方法时，JavaScript 会暂时将原始数据类型包装成对应的 Number 或 String 对象，然后调用对象上的 toString() 方法。
