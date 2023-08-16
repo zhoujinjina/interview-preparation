@@ -7,12 +7,9 @@ function filter(str) {
       map.set(i, 1);
     }
   }
-
   const arr = [...new Set(str)];
-  console.log(map);
-  console.log(arr);
-  let n;//最小
-  let min = map.get(arr[0]);
+  let n;//最小的字母
+  let min = map.get(arr[0]);//初始化最小为第一个字符的个数
   for (let i of arr) {
     if (map.get(i) < min) {
       min = map.get(i);
