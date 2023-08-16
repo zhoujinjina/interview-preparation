@@ -146,6 +146,8 @@ componentDidUpdate
 卸载
 componentWillUnmount
 
+hooks不能在判断 循环 嵌套函数中使用
+
 函数式编程和类式编程区别：
 类组件是使用 ES6 类语法定义的组件，在类组件中可以使用状态（state）、生命周期方法（lifecycle methods）和 ref 等特性。
 类组件可以使用 this 关键字访问组件的状态和方法。而函数组件是使用函数语法定义的组件，它没有自己的状态（state）和生命周期方法（lifecycle methods），但可以通过 props 来接收外部传入的数据
