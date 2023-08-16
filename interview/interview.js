@@ -30,6 +30,5 @@ function filter(str) {
 }
 console.log(filter("aaabbbccteeff156546"));
 let fh = [1, 22, 3];
-console.log(fh.indexOf(11));
+console.log(Object instanceof Object);
 
-console.log( typeof Function);
