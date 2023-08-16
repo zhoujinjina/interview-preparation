@@ -26,6 +26,22 @@ function filter(str) {
   return newArr.join("");
 }
 console.log(filter("aaabbbccteeff156546"));
-let fh = [1, 22, 3];
-console.log(Object instanceof Object);
+let fh = new Map([[1,2],[3,4],[5,6]])
+console.log(fh)
+const myMap = new Map();
+myMap.set('key1', 5);
+myMap.set('key2', 3);
+myMap.set('key3', 8);
+
+// 将键值对转换为数组，并按值进行排序
+const sortedArray = Array.from(myMap).sort((a, b) => a[1] - b[1]);
+
+// 创建一个新的 Map 对象，按排序后的数组重新设置键值对
+const sortedMap = new Map(sortedArray);
+
+// 输出排序后的 Map 对象
+for (const [key, value] of sortedMap) {
+  console.log(`${key}: ${value}`);
+}
+
 
