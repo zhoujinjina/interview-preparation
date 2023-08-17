@@ -146,7 +146,7 @@ componentDidUpdate
 卸载
 componentWillUnmount
 
-hooks不能在判断 循环 嵌套函数中使用
+hooks 不能在判断 循环 嵌套函数中使用
 
 函数式编程和类式编程区别：
 类组件是使用 ES6 类语法定义的组件，在类组件中可以使用状态（state）、生命周期方法（lifecycle methods）和 ref 等特性。
@@ -169,7 +169,7 @@ diff 算法的具体实现过程如下：
 比较子节点：比较它们的子节点是否有变化。如果子节点相同，则继续递归比较子节点的属性和子节点。如果子节点不同，则直接替换子节点
 
 说说虚拟 DOM 和真实 DOM
-虚拟 DOM 是一个基于 JavaScript 对象对真实DOM的抽象表示，它可以反映真实 DOM 的结构和状态，当应用状态发生改变时，会创建一个新的虚拟 DOM，跟旧的虚拟 DOM 进行比较，计算出最小的 DOM 操作
+虚拟 DOM 是一个基于 JavaScript 对象对真实 DOM 的抽象表示，它可以反映真实 DOM 的结构和状态，当应用状态发生改变时，会创建一个新的虚拟 DOM，跟旧的虚拟 DOM 进行比较，计算出最小的 DOM 操作
 虚拟 DOM 的操作速度相比真实 DOM 更快，因为虚拟 DOM 是基于 JavaScript 对象的操作，而真实 DOM 是基于浏览器的操作
 
 React Fiber 可以理解为：
@@ -282,9 +282,7 @@ typeOf 可判断出 number, string, object(无法分辨是[] {}), boolean, funct
 null：所有机器码均为 0
 undefined：用 −2^30 整数来表示
 
-32.怎么实现无感刷新 token 
-1.在接口请求前判断 token 是否过期 jwt 无状态 
-2.请求后根据返回状态判断是否过期，过期则刷新 在响应拦截器中根据返回状态刷新 token
+32.怎么实现无感刷新 token 1.在接口请求前判断 token 是否过期 jwt 无状态 2.请求后根据返回状态判断是否过期，过期则刷新 在响应拦截器中根据返回状态刷新 token
 
 32.SEO 方案，白帽和黑帽：
 SEO（Search Engine Optimization）指的是通过优化网站以提高在搜索引擎中的排名和可见性。
@@ -319,3 +317,14 @@ some（true） every（false） for（break）
 rem 相对于根元素的字体大小进行计算
 em 相对于父元素的字体大小进行计算
 
+40.对象遍历方法
+Object.keys()
+Object.values()
+for...in 可以遍历到原型链上的属性
+Object.entries()
+
+41.Set WeakSet Map WeakMap
+Set 是一种存储唯一值的集合，即其中的成员没有重复值 add delete has
+WeakSet 中的对象是弱引用，即如果对象在其他地方没有被引用，它可以被垃圾回收。
+Map 是一种键值对的集合，其中每个键都是唯一的，即键和值之间的映射是一对一的关系 get set has delete
+WeakMap 是一种特殊的映射，它只能存储对象引用作为键，而且键是弱引用，不会阻止对象被垃圾回收。

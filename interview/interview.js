@@ -47,5 +47,4 @@ let a=[[1,2],[1,22],[2,3],[3,14],3]
  a.sort((a,b)=>a[1]-b[1])
 console.log(1-a[4][1])
  console.log(a)
-
-
+console.log(Object.prototype.toString.call(null))//可以判断元素的具体类型 
