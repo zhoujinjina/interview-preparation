@@ -326,5 +326,6 @@ Object.entries()
 41.Set WeakSet Map WeakMap
 Set 是一种存储唯一值的集合，即其中的成员没有重复值 add delete has
 WeakSet它只能存储对象引用，而不能存储原始类型的值,WeakSet中的对象是弱引用，即如果对象在其他地方没有被引用，它可以被垃圾回收。
+比如dom元素，dom元素存在的时候需要存储一个数据 但是dom被销毁了就不需要了 用WeakMap就可以自动回收 用Map的话自身就算一次引用 并不会被gc回收
 Map 是一种键值对的集合，其中每个键都是唯一的，即键和值之间的映射是一对一的关系 get set has delete
 WeakMap 是一种特殊的映射，它只能存储对象引用作为键，而且键是弱引用，不会阻止对象被垃圾回收。
