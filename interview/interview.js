@@ -43,5 +43,9 @@ const sortedMap = new Map(sortedArray);
 for (const [key, value] of sortedMap) {
   console.log(`${key}: ${value}`);
 }
+let a=[[1,2],[1,22],[2,3],[3,14],3]
+ a.sort((a,b)=>a[1]-b[1])
+console.log(1-a[4][1])
+ console.log(a)
 
 
