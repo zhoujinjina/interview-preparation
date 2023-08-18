@@ -325,7 +325,22 @@ Object.entries()
 
 41.Set WeakSet Map WeakMap
 Set 是一种存储唯一值的集合，即其中的成员没有重复值 add delete has
-WeakSet它只能存储对象引用，而不能存储原始类型的值,WeakSet中的对象是弱引用，即如果对象在其他地方没有被引用，它可以被垃圾回收。
-比如dom元素，dom元素存在的时候需要存储一个数据 但是dom被销毁了就不需要了 用WeakMap就可以自动回收 用Map的话自身就算一次引用 并不会被gc回收
+WeakSet 它只能存储对象引用，而不能存储原始类型的值,WeakSet 中的对象是弱引用，即如果对象在其他地方没有被引用，它可以被垃圾回收。
+比如 dom 元素，dom 元素存在的时候需要存储一个数据 但是 dom 被销毁了就不需要了 用 WeakMap 就可以自动回收 用 Map 的话自身就算一次引用 并不会被 gc 回收
 Map 是一种键值对的集合，其中每个键都是唯一的，即键和值之间的映射是一对一的关系 get set has delete
 WeakMap 是一种特殊的映射，它只能存储对象引用作为键，而且键是弱引用，不会阻止对象被垃圾回收。
+
+42.BFC 
+BFC全称是Block Formatting Context，即块级格式化上下文
+BFC称为块级格式化上下文，是CSS中的一种渲染机制。是一个独立的渲染区域的盒子(也可以理解为结界)，规定了内部元素如何布局，并且盒子内部元素与外部元素互不影响。
+触发 BFC 的属性：
+overflow: hidden
+position: absolute
+position: fixed
+display: inline-block
+display: table-cell
+display: flex 
+
+BFC清除浮动 解决高度塌陷问题
+阻止普通文档流元素被浮动元素覆盖
+同时，由于BFC的隔离作用，可以利用BFC包含一个元素，防止这个元素与BFC外的元素发生外边距折叠 解决普通文档流块元素的外边距折叠问题

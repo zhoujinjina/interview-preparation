@@ -54,4 +54,4 @@ function func() {
 
 boundFunc = func.bind({a:"12"})
 new boundFunc() // Object true，口诀 2 优先
-
+console.log("1,1,1,1".split(","))
