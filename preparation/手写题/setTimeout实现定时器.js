@@ -1,18 +1,16 @@
-function myInterval(func, time){
-    function myFunc(){
-        func()
-        Tid=setTimeout(myFunc,time)
-    }
-    var Tid=setTimeout(myFunc, time)
-    return ()=>{
-        clearTimeout(Tid)
-    }
+function mySetTimeout(func, timeout) {
+  function myFun() {
+    func();
+    myInterval = setTimeout(myFun, timeout);
+  }
+  var myInterval = setTimeout(myFun, timeout);
+  return () => {
+    clearTimeout(myInterval);
+  };
 }
-var clearInterval=myInterval(()=>{
-    console.log("Hello world!")
-},1000)
-
-setTimeout(()=>{
-    clearInterval()
-},10000)
-console.log()
+let m = mySetTimeout(() => {
+  console.log("hello world");
+}, 1000);
+setTimeout(() => {
+  m();
+}, 10000);

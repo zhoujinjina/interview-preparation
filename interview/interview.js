@@ -47,3 +47,11 @@ for (const [key, value] of sortedMap) {
 
   console.log(new Map(a))
 console.log(Object.prototype.toString.call(new Map()))//可以判断元素的具体类型 
+function func() {
+  console.log(this)
+  console.log(this, this.__proto__ === func.prototype)
+}
+
+boundFunc = func.bind({a:"12"})
+new boundFunc() // Object true，口诀 2 优先
+
