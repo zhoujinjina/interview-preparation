@@ -102,6 +102,26 @@ Plugin 则是用于扩展 webpack 的功能，例如优化、压缩、代码分�
 Webpack 通过 WebSocket 与浏览器建立连接，将 Patch 文件推送给浏览器。
 浏览器接收到 Patch 文件后，通过 Webpack 的 HMR Runtime 对模块进行更新，然后将更新后的模块插入到页面中，从而实现热更新的效果
 
+webpack 性能优化：
+ 优化构建速度：
+1.减少执行构建的模块：通过 include exclude 配置来确保转译尽可能少的文件 
+2.定向查找：resolve.modules 使用绝对路径指明第三方模块存放的位置，以减少搜索步骤 
+3.并行构建以提升总体速度：HappyPack Thread-loader
+4.并行压缩提高构建效率:压缩 js 主要使用 uglifyjs-webpack-plugin 和 terser-webpack-plugin 
+5.合理使用缓存：通过缓存提高二次打包的速度 babel-loader 开启缓存 cache-loader放在其他loader之前
+    loader: 'babel-loader',
+    options: {
+    cacheDirectory: true,
+    },
+优化构建结果：
+1.压缩代码 js css html image
+2.按需加载 很多时候我们不需要一次性加载所有的JS文件，而应该在不同阶段去加载所需要的代码。
+3.提前加载 当浏览器空闲时加载模块 prefetch 和 preload
+4.code splitting(代码分割) SplitChunksPlugin(js) mini-css-extract-plugin(css) 
+在项目中，一般是使用同一套技术栈和公共资源。那么如果每个页面的代码中都有这些公开资源，会造成资源浪费
+5.tree shaking
+6.Gzip对资源进一步压缩
+7.scope hoisting （作用提升 把需要导入的文件直接移入模块的顶部）
 15.网络安全
 强制缓存和协商缓存
 强制缓存：第一次向服务器请求资源之后，服务器会在响应头设置 cache-control 字段，告诉浏览器一定时间内可以直接从缓存中获取资源
@@ -330,14 +350,14 @@ WeakSet 它只能存储对象引用，而不能存储原始类型的值,WeakSet 
 Map 是一种键值对的集合，其中每个键都是唯一的，即键和值之间的映射是一对一的关系 get set has delete
 WeakMap 是一种特殊的映射，它只能存储对象引用作为键，而且键是弱引用，不会阻止对象被垃圾回收。
 
-42.BFC 
-BFC全称是Block Formatting Context，即块级格式化上下文
-BFC称为块级格式化上下文，是CSS中的一种渲染机制。是一个独立的渲染区域(也可以理解为结界)，规定了内部元素如何布局，并且盒子内部元素与外部元素互不影响。
-BFC的布局规则：
-BFC就是一个块级元素，块级元素会在垂直方向一个接一个的排列
-BFC就是页面中的一个隔离的独立容器，容器里的标签不会影响到外部标签
-垂直方向的距离由margin决定， 属于同一个BFC的两个相邻的标签外边距会发生重叠
-计算BFC的高度时，浮动元素也参与计算
+42.BFC
+BFC 全称是 Block Formatting Context，即块级格式化上下文
+BFC 称为块级格式化上下文，是 CSS 中的一种渲染机制。是一个独立的渲染区域(也可以理解为结界)，规定了内部元素如何布局，并且盒子内部元素与外部元素互不影响。
+BFC 的布局规则：
+BFC 就是一个块级元素，块级元素会在垂直方向一个接一个的排列
+BFC 就是页面中的一个隔离的独立容器，容器里的标签不会影响到外部标签
+垂直方向的距离由 margin 决定， 属于同一个 BFC 的两个相邻的标签外边距会发生重叠
+计算 BFC 的高度时，浮动元素也参与计算
 
 触发 BFC 的属性：
 overflow: hidden
@@ -345,9 +365,9 @@ position: absolute
 position: fixed
 display: inline-block
 display: table-cell
-display: flex 
+display: flex
 
-BFC的作用：
-BFC清除浮动 解决高度塌陷问题
+BFC 的作用：
+BFC 清除浮动 解决高度塌陷问题
 阻止普通文档流元素被浮动元素覆盖
-同时，由于BFC的隔离作用，可以利用BFC包含一个元素，防止这个元素与BFC外的元素发生外边距折叠 解决普通文档流块元素的外边距折叠问题
+同时，由于 BFC 的隔离作用，可以利用 BFC 包含一个元素，防止这个元素与 BFC 外的元素发生外边距折叠 解决普通文档流块元素的外边距折叠问题
