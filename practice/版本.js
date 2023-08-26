@@ -1,16 +1,15 @@
-function maxSum(arr) {
-    let sum = 0,
-      now = 0;
-    for (let i of arr) {
-      if (now < 0) {
-        now = 0;
+function change(str){
+  let arr=Array.from(str)
+  arr=arr.reverse()
+  let newArr=[]
+  let count=0
+  for(let i=0;i<arr.length;i++){
+      if(count%3==0&&count!=0){
+          newArr.push(",")
       }
-      now += i;
-      if (now > sum) {
-        sum = now;
-      }
-    }
-    return sum;
+      newArr.push(arr[i])
+      count++
   }
-  // 最大和
-  
+  return newArr.reverse().join('')
+}
+console.log(change("1234567890"))
