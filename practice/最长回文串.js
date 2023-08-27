@@ -24,5 +24,5 @@ str=str.split('')
   }
   return maxLength;
 };
-console.log(longestString("sjsajdlkadjjjda"));
+console.log(longestString("addaldad"));
 
