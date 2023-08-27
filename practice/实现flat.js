@@ -3,3 +3,8 @@ function flat(arr){
 }
 let arr=[1,3,[[2,33,33],[[1,2,3]]]]
 console.log(flat(arr))
+
+function flat2(arr){
+    return arr.toString().split(',').map(item=>parseInt(item))
+}
+console.log(flat2(arr)==flat(arr))
