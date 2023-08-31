@@ -32,9 +32,9 @@ flex-shrink:1 剩余空间不足时进行缩小
 flex-basis:0% 这意味着元素在没有任何伸缩能力之前的初始大小为 0%
 
 6.css 隐藏元素方案
-display:none
 opacity:0
-visibility:hidden
+display：none 不显示对应的元素，在文档布局中不再分配空间（回流+重绘）
+visibility：hidden 隐藏对应元素，在文档布局中仍保留原来的空间（重绘）
 
 7.说说浏览器输入地址后会发生的事情
 输入地址后，浏览器会向服务器发起 DNS 请求得到相应的 ip 地址，之后会进行 tcp 三次握手与服务器连接，连接成功后会发出 get 请求，通常是一个 html 文件，服务器会根据响应头和 html 内容进行响应，浏览器得到数据后，会解析 html 得到 DOM 树，解析 css 得到 CSSDOM 树，然后将 DOM 树和 CSSDOM 树合并得到 render 树，然后会计算每个节点在页面中的位置和大小，得到布局树，最后根据布局树中的节点绘制到页面上，得到最终的视觉效果
@@ -223,14 +223,15 @@ git cherry-pick c1 c2 将这两次提交复制到当前分支
 git rebase -i HEAD~n 将当前分支之前的 n 个提交复制到另一个分叉中 并且可以删除其中一个或者几个
 
 20.css3 新特性
-border-radius 圆角边框
-box-shadow 盒子阴影
-tex-shadow 文字阴影
-Gradient 渐变背景 background: linear-gradient(to bottom, #ff0000, #00ff00)
-transition 过渡效果
-animations 动画效果
-flex 弹性盒子布局
-grid 网格布局
+RGBA和透明度
+background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
+word-wrap（对长的不可分割单词换行）word-wrap：break-word
+文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
+font-face属性：定义自己的字体
+圆角（边框半径）：border-radius 属性用于创建圆角
+边框图片：border-image: url(border.png) 30 30 round
+盒阴影：box-shadow: 10px 10px 5px #888888
+媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
 
 21.localStorage 和 sessionStorage 的区别
 1.localStorage 中的数据没有过期时间，除非通过代码或者手动清除，否则会一直保存在客户端，
@@ -360,12 +361,10 @@ BFC 就是页面中的一个隔离的独立容器，容器里的标签不会影�
 计算 BFC 的高度时，浮动元素也参与计算
 
 触发 BFC 的属性：
-overflow: hidden
-position: absolute
-position: fixed
-display: inline-block
-display: table-cell
-display: flex
+float的值不为none（默认）
+overflow的值不为visible（默认）
+display的值为inline-block、table-cell、table-caption、table、flex
+position的值为absolute或fixed
 
 BFC 的作用：
 BFC 清除浮动 解决高度塌陷问题
