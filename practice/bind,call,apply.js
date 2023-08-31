@@ -18,3 +18,7 @@ newPerson()
 let as=Person.call(person,12,13)
 console.log(person)
 console.log(as)
+// 添加新元素并返回被删除的元素  
+let arr = ["apple", "banana", "cherry", "date", "elderberry"];  
+removed = arr.splice(2, 1);   
+console.log(removed); // [ 'apple', 'date', 'blueberry', 'cinnamon', 'elderberry' ]

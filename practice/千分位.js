@@ -13,3 +13,13 @@ function change(str){
     return newArr.reverse().join('')
 }
 console.log(change("1234567890"))
+let user={
+    name: 'John',
+    age: 34
+}
+let newUser=structuredClone(user)
+console.log(newUser)
+user.name="jinjin"
+console.log(user)
+console.log(newUser)
+console.log(user.toString())
