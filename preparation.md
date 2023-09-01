@@ -233,8 +233,14 @@ font-face属性：定义自己的字体
 盒阴影：box-shadow: 10px 10px 5px #888888
 媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
 
-21.localStorage 和 sessionStorage 的区别
-1.localStorage 中的数据没有过期时间，除非通过代码或者手动清除，否则会一直保存在客户端，
+21.cookies，sessionStorage和localStorage的区别？
+
+共同点：都是保存在浏览器端，且是同源的。
+区别：
+cookies是为了标识用户身份而存储在用户本地终端上的数据，始终在同源http请求中携带，即cookies在浏览器和服务器间来回传递的数据很小，不能超过4k
+cookie在设置的cookie过期时间之前一直有效，即使窗口或者浏览器关闭。
+cookie在所有的同源窗口都是共享
+localStorage 中的数据没有过期时间，除非通过代码或者手动清除，否则会一直保存在客户端，
 sessionStorage 中的数据会在当前会话窗口关闭时自动清除
 localStorage 的数据可以在同源的所有窗口共享 而 sessionStorage 中的数据只在同一个窗口中有效，不同窗口之间的数据不共享
 localStorage 和 sessionStorage 中存储的数据大小限制在不同的浏览器中有所不同，但通常都在 5MB 左右
@@ -401,7 +407,7 @@ BFC 清除浮动 解决高度塌陷问题
  深度优先：找到一个节点后，把它的后辈都找出来，最常用递归法。
  广度优先：找到一个节点后，把他同级的兄弟节点都找出来放在前边，把孩子放到后边，最常用 while
 
- 47.html语义化
+ 47.html语义化s
  header nav main article aside footer 
  1.方便理解和阅读
  2.易修改易维护
