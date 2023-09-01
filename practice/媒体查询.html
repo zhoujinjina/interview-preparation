@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.bootcss.com/fullPage.js/2.9.3/jquery.fullpage.min.css"
+    />
+
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "linear", "swing" or "easeInOutCubic". -->
+    <script src="https://cdn.bootcss.com/fullPage.js/2.9.3/vendors/jquery.easings.min.js"></script>
+
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script
+      type="text/javascript"
+      src="https://cdn.bootcss.com/fullPage.js/2.9.3/vendors/scrolloverflow.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.bootcss.com/fullPage.js/2.9.3/jquery.fullpage.min.js"
+    ></script>
+    <script>
+      $(function () {
+        $("#root").fullpage();
+        // 调用此方法进行初始化
+      });
+    </script>
+  </head>
+  <style>
+    .section {
+      height: 100vh;
+      width: 100vw;
+    }
+    #root>div:nth-child(1){
+        background-color: rgb(0, 200, 255);
+    }
+    
+    #root>div:nth-child(2){
+        background-color: rgb(155, 90, 90);
+    }
+    
+    #root>div:nth-child(3){
+        background-color: rgb(54, 17, 17);
+    }
+    #root>div:nth-child(4){
+        background-color: rgb(197, 172, 172);
+    }
+  </style>
+  <body>
+    <div id="root">
+      <div class="section">
+        <h3>第一屏</h3>
+      </div>
+      <div class="section">
+        <h3>第二屏</h3>
+      </div>
+      <div class="section">
+        <h3>第三屏</h3>
+      </div>
+      <div class="section">
+        <h3>第四屏</h3>
+      </div>
+    </div>
+  </body>
+</html>

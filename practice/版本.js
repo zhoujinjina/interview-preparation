@@ -12,4 +12,4 @@ function change(str){
   }
   return newArr.reverse().join('')
 }
-console.log(change("1234567890"))
+console.log(change("1234567890.122"))
