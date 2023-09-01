@@ -408,6 +408,12 @@ BFC 清除浮动 解决高度塌陷问题
  2.方便SEO(搜索引擎优化)
 
  48.你对line-height是如何理解的？
-行高是指一行文字的高度，具体说是两行文字间基线的距离。CSS中起高度作用的是height和line-height，没有定义height属性，最终其表现作用一定是line-height。
-单行文本垂直居中：把line-height值设置为height一样大小的值可以实现单行文字的垂直居中，其实也可以把height删除。
-多行文本垂直居中：需要设置display属性为inline-block。
+ 行高是指一行文字的高度，具体说是两行文字间基线的距离。CSS中起高度作用的是height和line-height，没有定义height属性，最终其表现作用一定是line-height。
+ 单行文本垂直居中：把line-height值设置为height一样大小的值可以实现单行文字的垂直居中，其实也可以把height删除。
+ 多行文本垂直居中：需要设置display属性为inline-block。
+
+ 49.CSS属性overflow属性定义溢出元素内容区的内容会如何处理?
+ 参数是scroll时候，必会出现滚动条。
+ 参数是auto时候，子元素内容大于父元素时出现滚动条。
+ 参数是visible时候，溢出的内容出现在父元素之外。
+ 参数是hidden时候，溢出隐藏。
