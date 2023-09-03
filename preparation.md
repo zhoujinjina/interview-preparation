@@ -429,4 +429,6 @@ BFC 清除浮动 解决高度塌陷问题
 
  51.React怎么实现立即更新组件状态？
  React 提供了一种解决方案来实现这个需求，即使用函数式的形式调用状态更新函数。
-   setCount((prevCount) => prevCount + 1); // 使用函数式调用形式更新状态
+ setCount((prevCount) => prevCount + 1); // 使用函数式调用形式更新状态
+
+ 52.React怎么实现更新状态但是不重新渲染页面？
