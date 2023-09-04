@@ -351,11 +351,12 @@ for...in 可以遍历到原型链上的属性
 Object.entries()
 
 41.Set WeakSet Map WeakMap
+Map的key相比较普通对象来说更为灵活，普通对象的key只能以基础数据类型作为key值，并且所有传入的key值都会被转化成string类型，而Map的key可以是各种数据类型格式
 Set 是一种存储唯一值的集合，即其中的成员没有重复值 add delete has
 WeakSet 它只能存储对象引用，而不能存储原始类型的值,WeakSet 中的对象是弱引用，即如果对象在其他地方没有被引用，它可以被垃圾回收。
 比如 dom 元素，dom 元素存在的时候需要存储一个数据 但是 dom 被销毁了就不需要了 用 WeakMap 就可以自动回收 用 Map 的话自身就算一次引用 并不会被 gc 回收
 Map 是一种键值对的集合，其中每个键都是唯一的，即键和值之间的映射是一对一的关系 get set has delete
-WeakMap 是一种特殊的映射，它只能存储对象引用作为键，而且键是弱引用，不会阻止对象被垃圾回收。
+WeakMap只能以复杂数据类型作为key，并且key值是弱引用，不会阻止对象被垃圾回收，对于垃圾回收更加友好。
 
 42.BFC
 BFC 全称是 Block Formatting Context，即块级格式化上下文
@@ -433,3 +434,26 @@ BFC 清除浮动 解决高度塌陷问题
 
  52.React怎么实现更新状态但是不重新渲染页面？
  useRef对count的引用 没有直接改变状态 不懂这个
+
+ 53.作用域
+作用域是指程序源代码中定义变量的区域。
+作用域规定了如何查找变量，也就是确定当前执行代码对变量的访问权限。
+JavaScript 采用词法作用域(lexical scoping)，也就是静态作用域。
+静态作用域与动态作用域
+var value = 1;
+
+function foo() {
+    console.log(value);
+}
+
+function bar() {
+    var value = 2;
+    foo();
+}
+bar();
+// 结果是 ???
+假设JavaScript采用静态作用域，让我们分析下执行过程：
+执行 foo 函数，先从 foo 函数内部查找是否有局部变量 value，如果没有，就根据书写的位置，查找上面一层的代码，也就是 value 等于 1，所以结果会打印 1。
+假设JavaScript采用动态作用域，让我们分析下执行过程：
+执行 foo 函数，依然是从 foo 函数内部查找是否有局部变量 value。如果没有，就从调用函数的作用域，也就是 bar 函数内部查找 value 变量，所以结果会打印 2。
+前面我们已经说了，JavaScript采用的是静态作用域，所以这个例子的结果是 1。
