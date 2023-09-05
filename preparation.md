@@ -435,25 +435,37 @@ BFC 清除浮动 解决高度塌陷问题
  52.React怎么实现更新状态但是不重新渲染页面？
  useRef对count的引用 没有直接改变状态 不懂这个
 
- 53.作用域
-作用域是指程序源代码中定义变量的区域。
-作用域规定了如何查找变量，也就是确定当前执行代码对变量的访问权限。
-JavaScript 采用词法作用域(lexical scoping)，也就是静态作用域。
-静态作用域与动态作用域
-var value = 1;
+ 53.浅拷贝和深拷贝的区别
 
-function foo() {
-    console.log(value);
+浅拷贝：一般指的是把对象的第一层拷贝到一个新对象上去，比如
+
+js复制代码var a = { count: 1, deep: { count: 2 } }
+var b = Object.assign({}, a)
+// 或者
+var b = {...a}
+
+
+深拷贝：一般需要借助递归实现，如果对象的值还是个对象，要进一步的深入拷贝，完全替换掉每一个复杂类型的引用。
+
+js复制代码var deepCopy = (obj) => {
+    var ret = {}
+    for (var key in obj) {
+        var value = obj[key]
+        ret[key] = typeof value === 'object' ? deepCopy(value) : value
+    }
+    return ret
 }
 
-function bar() {
-    var value = 2;
-    foo();
-}
-bar();
-// 结果是 ???
-假设JavaScript采用静态作用域，让我们分析下执行过程：
-执行 foo 函数，先从 foo 函数内部查找是否有局部变量 value，如果没有，就根据书写的位置，查找上面一层的代码，也就是 value 等于 1，所以结果会打印 1。
-假设JavaScript采用动态作用域，让我们分析下执行过程：
-执行 foo 函数，依然是从 foo 函数内部查找是否有局部变量 value。如果没有，就从调用函数的作用域，也就是 bar 函数内部查找 value 变量，所以结果会打印 2。
-前面我们已经说了，JavaScript采用的是静态作用域，所以这个例子的结果是 1。
+对于同一个用例来说
+js复制代码// 浅拷贝
+var a = { count: 1, deep: { count: 2 } }
+var b = {...a}
+
+a.deep.count = 5
+b.deep.count // 5
+
+js复制代码var a = { count: 1, deep: { count: 2 } }
+var b = deepCopy(a)
+a.deep.count = 5
+b.deep.count // 2
+
