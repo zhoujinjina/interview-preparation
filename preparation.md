@@ -435,39 +435,9 @@ BFC 清除浮动 解决高度塌陷问题
  52.React怎么实现更新状态但是不重新渲染页面？
  useRef对count的引用 没有直接改变状态 不懂这个
 
- 53.浅拷贝和深拷贝的区别
-
-浅拷贝：一般指的是把对象的第一层拷贝到一个新对象上去，比如
-
-js复制代码var a = { count: 1, deep: { count: 2 } }
-var b = Object.assign({}, a)
-// 或者
-var b = {...a}
-
-
-深拷贝：一般需要借助递归实现，如果对象的值还是个对象，要进一步的深入拷贝，完全替换掉每一个复杂类型的引用。
-
-js复制代码var deepCopy = (obj) => {
-    var ret = {}
-    for (var key in obj) {
-        var value = obj[key]
-        ret[key] = typeof value === 'object' ? deepCopy(value) : value
-    }
-    return ret
-}
-
-对于同一个用例来说
-js复制代码// 浅拷贝
-var a = { count: 1, deep: { count: 2 } }
-var b = {...a}
-
-a.deep.count = 5
-b.deep.count // 5
-
-js复制代码var a = { count: 1, deep: { count: 2 } }
-var b = deepCopy(a)
-a.deep.count = 5
-b.deep.count // 2
+ 53.this指向
+ 当obj在全局声明的时候，obj内部属性中的this指向全局对象，当obj在一个函数中声明的时候，严格模式下this会指向undefined，非严格模式自动转为指向全局对象。
+ 当函数独立调用的时候，在严格模式下它的this指向undefined，在非严格模式下，当this指向undefined的时候，自动指向全局对象(浏览器中就是window)
 
 54.async/await的弊端
 阻塞执行：使用 await 关键字可以暂停函数的执行，直到异步操作完成。这意味着在等待异步操作完成之前，函数会一直阻塞，无法执行其他任务。如果在大型应用程序中滥用 await，可能会导致性能问题，因为它会阻塞事件循环。
