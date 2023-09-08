@@ -168,6 +168,14 @@ componentWillUnmount
 
 hooks 不能在判断 循环 嵌套函数中使用
 
+React Hooks缺陷:
+写法上有限制（不能出现在条件、循环中），并且写法限制增加了重构成本
+破坏了PureComponent、React.memo浅比较的性能优化效果（为了取最新的props和state，每次render()都要重新创建事件处函数）
+在闭包场景可能会引用到旧的state、props值
+内部实现上不直观（依赖一份可变的全局状态，不再那么“纯”）
+React.memo并不能完全替代shouldComponentUpdate（因为拿不到 state change，只针对 props change）
+
+
 函数式编程和类式编程区别：
 类组件是使用 ES6 类语法定义的组件，在类组件中可以使用状态（state）、生命周期方法（lifecycle methods）和 ref 等特性。
 类组件可以使用 this 关键字访问组件的状态和方法。而函数组件是使用函数语法定义的组件，它没有自己的状态（state）和生命周期方法（lifecycle methods），但可以通过 props 来接收外部传入的数据
