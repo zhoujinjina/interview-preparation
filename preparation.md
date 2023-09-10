@@ -177,8 +177,16 @@ React.memo并不能完全替代shouldComponentUpdate（因为拿不到 state cha
 
 
 函数式编程和类式编程区别：
-类组件是使用 ES6 类语法定义的组件，在类组件中可以使用状态（state）、生命周期方法（lifecycle methods）和 ref 等特性。
-类组件可以使用 this 关键字访问组件的状态和方法。而函数组件是使用函数语法定义的组件，它没有自己的状态（state）和生命周期方法（lifecycle methods），但可以通过 props 来接收外部传入的数据
+1. 类组件的不足：
+状态逻辑难复用： 在组件之间复用状态逻辑很难，可能要用到 render props （渲染属性）或者 HOC（高阶组件），但无论是渲染属性，还是高阶组件，都会在原先的组件外包裹一层父容器（一般都是 div 元素），导致层级冗余
+this 指向问题：父组件给子组件传递函数时，必须绑定 this
+趋向复杂难以维护：在 componentDidMount 中注册事件以及其他的逻辑，在 componentWillUnmount 中卸载事件，这样分散不集中的写法，很容易写出 bug
+
+2. Hooks 优势
+能优化类组件的三大问题
+能在无需修改组件结构的情况下复用状态逻辑（自定义 Hooks ）
+能将组件中相互关联的部分拆分成更小的函数（比如设置订阅或请求数据）
+副作用的关注点分离：副作用指那些没有发生在数据向视图转换过程中的逻辑，如 ajax 请求、访问原生dom 元素、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等。以往这些副作用都是写在类组件生命周期函数中的。而 useEffect 在全部渲染完毕后才会执行，useLayoutEffect 会在浏览器 layout 之后，painting 之前执行
 
 React 和 Vue 区别：
 模板语法：Vue 使用模板语法，将 JavaScript 代码和 HTML 代码混合在一起，React 则使用 JSX 语法，可以在 JavaScript 代码中直接嵌入 HTML 代码
