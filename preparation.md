@@ -168,6 +168,14 @@ componentWillUnmount
 
 hooks 不能在判断 循环 嵌套函数中使用
 
+ Hook = {
+    memoizedState: null,  // useState中 保存 state信息 ｜ useEffect 中 保存着 effect 对象 ｜ useMemo 中 保存的是缓存的值和deps ｜ useRef中保存的是ref 对象
+    baseState: null,
+    baseQueue: null,
+    queue: null,
+    next: null,
+  };
+
 React Hooks缺陷:
 写法上有限制（不能出现在条件、循环中），并且写法限制增加了重构成本
 破坏了PureComponent、React.memo浅比较的性能优化效果（为了取最新的props和state，每次render()都要重新创建事件处函数）
