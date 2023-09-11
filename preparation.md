@@ -175,6 +175,11 @@ hooks 不能在判断 循环 嵌套函数中使用
     queue: null,
     next: null,
   };
+memoizedState： useState中 保存 state 信息 ｜ useEffect 中 保存着 effect 对象 ｜ useMemo 中 保存的是缓存的值和 deps ｜ useRef 中保存的是 ref 对象。
+baseQueue : usestate和useReducer中 保存最新的更新队列。
+baseState ： usestate和useReducer中,一次更新中 ，产生的最新state值。
+queue ： 保存待更新队列 pendingQueue ，更新函数 dispatch 等信息。
+next: 指向下一个 hooks对象。
 
 React Hooks缺陷:
 写法上有限制（不能出现在条件、循环中），并且写法限制增加了重构成本
