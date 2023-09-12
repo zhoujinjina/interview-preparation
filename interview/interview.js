@@ -1,14 +1,8 @@
-var sortArray = function(nums) {
-    let mid=nums[0]
-    let right=[],left=[]
-    nums.splice(0,1)
-    for(let i of nums){
-if(i<mid){
-  left.push(i)
-}else{
-  right.push(i)
-}
+let arr=[1,22,3,33,3,3,3]
+console.log(arr.reduce((pre,n,index,arr)=>{
+    if(index==1){
+        arr[index]=220
     }
-    return [...sortArray(left),mid,...sortArray(right)]
-};
-console.log(sortArray([1,34,5,3,4,43,3]))
+    return pre+n
+},10))
+console.log(arr)
