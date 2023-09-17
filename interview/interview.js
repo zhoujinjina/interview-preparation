@@ -4,4 +4,8 @@ let uniqueArray = array.filter((value, index, self) => {
     return self.indexOf(value) === index;  
 })
 const newArr = array.reduce((acc, value) => acc.includes(value)  ? acc: [...acc,value], [2]);
-console.log(newArr)
+
+let flat=(arr)=>{
+    return arr.reduce((acc, value) =>Array.isArray(value)?acc.concat(flat(value)):[...acc,value],[])
+}
+console.log(flat([[1,2,3,4],3,4,5,7,[6,5,[6,5,[5,6,5]]]]))
