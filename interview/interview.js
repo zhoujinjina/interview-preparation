@@ -9,3 +9,7 @@ let flat=(arr)=>{
     return arr.reduce((acc, value) =>Array.isArray(value)?acc.concat(flat(value)):[...acc,value],[])
 }
 console.log(flat([[1,2,3,4],3,4,5,7,[6,5,[6,5,[5,6,5]]]]))
+let a=Symbol(2)
+let b=Symbol(2)
+console.log(a)
+console.log(b==a)
