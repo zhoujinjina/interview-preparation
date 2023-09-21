@@ -42,3 +42,21 @@ import rootSaga from './sagas';
 const sagaMiddleware = createSagaMiddleware();  
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));  
 sagaMiddleware.run(rootSaga);
+function isPalindrome(str) {  
+    // 将字符串转换为小写并去除空格和标点符号  
+    str = str.toLowerCase().replace(/[\s\p{Punct}]/gu, '');  
+    
+    // 使用双指针法进行比较  
+    let left = 0;  
+    let right = str.length - 1;  
+    
+    while (left < right) {  
+      if (str.charAt(left) !== str.charAt(right)) {  
+        return false;  
+      }  
+      left++;  
+      right--;  
+    }  
+    
+    return true;  
+  }
