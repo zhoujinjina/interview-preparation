@@ -60,3 +60,21 @@ function isPalindrome(str) {
     
     return true;  
   }
+  javascript
+function knapsack(items, capacity) {  
+  const n = items.length;  
+  const dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));  
+  
+  for (let i = 1; i <= n; i++) {  
+    const { weight, value } = items[i - 1];  
+    for (let j = 1; j <= capacity; j++) {  
+      if (weight <= j) {  
+        dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight] + value);  
+      } else {  
+        dp[i][j] = dp[i - 1][j];  
+      }  
+    }  
+  }  
+  
+  return dp[n][capacity];  
+}  
